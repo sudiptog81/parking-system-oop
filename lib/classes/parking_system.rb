@@ -36,7 +36,7 @@ class ParkingSystem
 
   # returns number of free spots in the lot
   def count_free_spots
-    @lot.free_spots.sum(&:length)
+    @lot.free_spots.sum { |_, v| v.length }
   end
 
   # returns number of free spots in the lot by floor
